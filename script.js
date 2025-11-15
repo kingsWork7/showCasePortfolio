@@ -9,68 +9,86 @@ menuIcon.onclick = () => {
 };
 
 
-// To recieve email from companies
-const formData = new FormData();
-formData.append("access_key", "a1ccab64-f758-438b-bc68-8f9d7c746525");
-formData.append("name", "John Doe");
-formData.append("email", "john@example.com");
-formData.append("message", "Hello World!");
+// PORTFOLIO SCREW EVENTS // 
 
-const response = await fetch("https://api.web3forms.com/submit", {
-  method: "POST",
-  body: formData
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("section");
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target); 
+      }
+    });
+  }, {
+    threshold: 0.2 
+  });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
 });
 
 
-const allDivs = document.querySelectorAll('section > div');
 
-  // Add the animation class to all of them
-  allDivs.forEach(div => div.classList.add('drop-animate'));
+// MY CONTACT FORM // 
 
-  const revealOnScroll = () => {
-    allDivs.forEach(div => {
-      const rect = div.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100) {
-        div.classList.add('show');
-      }
-    });
-  };
+const form = document.getElementById('form');
+const submitBtn = form.querySelector('button[type="submit"]');
 
-  window.addEventListener('scroll', revealOnScroll);
-  revealOnScroll(); // Run once on load
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-// // To receive email from companies
-// (async () => {
-//   try {
-//     const formData = new FormData();
-//     formData.append("access_key", "a1ccab64-f758-438b-bc68-8f9d7c746525")
+    const formData = new FormData(form);
+    formData.append("access_key", "a1ccab64-f758-438b-bc68-8f9d7c746525");
 
-//     const response = await fetch("https://api.web3forms.com/submit", {
-//       method: "POST",
-//       body: formData
-//     });
+    const originalText = submitBtn.textContent;
 
-//     // You can comment these lines out if you don’t want the alert
-//     const result = await response.json();
-//     console.log(result);
-//   } catch (error) {
-//     console.error(error);
-//   }
-// })();
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
 
-// const allDivs = document.querySelectorAll('section > div');
+    try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
 
-// // Add the animation class to all of them
-// allDivs.forEach(div => div.classList.add('drop-animate'));
+        const data = await response.json();
 
-// const revealOnScroll = () => {
-//   allDivs.forEach(div => {
-//     const rect = div.getBoundingClientRect();
-//     if (rect.top < window.innerHeight - 100) {
-//       div.classList.add('show');
+        if (response.ok) {
+            alert("Success! Your message has been sent.");
+            form.reset();
+        } else {
+            alert("Error: " + data.message);
+        }
+
+    } catch (error) {
+        alert("Something went wrong. Please try again.");
+    } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }
+});
+
+/// CODE FOR SKILLS SCROLL DISPLAY 
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     const skillCards = document.querySelectorAll('.skill-card');
+  
+//     function showCardsOnScroll() {
+//       skillCards.forEach(card => {
+//         const rect = card.getBoundingClientRect();
+//         // When card is 100px before entering viewport
+//         if (rect.top < window.innerHeight - 100) {
+//           card.classList.add('show');
+//         }
+//       });
 //     }
+  
+//     // Run once on scroll and when user scrolls
+//     window.addEventListener('scroll', showCardsOnScroll);
 //   });
-// };
 
-// window.addEventListener('scroll', revealOnScroll);
-// revealOnScroll(); // Run once on load
+
+  
