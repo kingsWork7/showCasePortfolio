@@ -281,10 +281,7 @@
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me</span></h2>
       
-        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-          <!-- Hidden access key for Web3Forms -->
-          <input type="hidden" name="access_key" value="a1ccab64-f758-438b-bc68-8f9d7c746525">
-      
+        <form id="contact-form">
           <div class="input-group">
             <div class="input-box">
               <input type="text" name="name" placeholder="Full Name" required />
@@ -295,10 +292,9 @@
               <input type="text" name="subject" placeholder="Subject" />
             </div>
           </div>
-      
           <div class="input-group-2">
             <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
-            <input type="submit" value="Send Message" class="btn" />
+            <button type="submit" class="btn">Send Message</button>
           </div>
         </form>
       </section>

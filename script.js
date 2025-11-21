@@ -34,17 +34,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // MY CONTACT FORM // 
 
-const form = document.getElementById('form');
+const form = document.getElementById('contact-form');
 const submitBtn = form.querySelector('button[type="submit"]');
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const formData = new FormData(form);
-    formData.append("access_key", "a1ccab64-f758-438b-bc68-8f9d7c746525");
+    formData.append("access_key", "a1ccab64-f758-438b-bc68-8f9d7c746525"); // your Web3Forms key
 
     const originalText = submitBtn.textContent;
-
     submitBtn.textContent = "Sending...";
     submitBtn.disabled = true;
 
@@ -60,11 +59,12 @@ form.addEventListener('submit', async (e) => {
             alert("Success! Your message has been sent.");
             form.reset();
         } else {
-            alert("Error: " + data.message);
+            alert("Error: " + (data.message || "Something went wrong"));
         }
 
     } catch (error) {
         alert("Something went wrong. Please try again.");
+        console.error(error);
     } finally {
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
