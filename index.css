@@ -411,7 +411,7 @@ span {
 .skills {
   text-align: center;
   padding: 8rem 5% 10rem;
-  background-color: #171d22;
+  background-color: var(--bg-color);
 }
 
 .heading {
@@ -488,7 +488,7 @@ span {
   display: grid;
 }
 .services .heading {
-  margin-bottom: 4rem;
+  margin-bottom: 8rem;
 }
 
 .services-box img {
@@ -801,8 +801,39 @@ span {
     margin: 0 5rem;
   }
 
- 
+  .box h1 {
+    font-size: 2.6rem;
+  }
+
+
 }
+@media screen and (max-width: 1124px) {
+  .projectBox .wrapper {
+    gap: 2rem; 
+  }
+
+  .box {
+    width: auto; 
+    padding: 20px;
+    
+  }
+
+  .box h1 {
+    font-size: 2.3rem;
+  }
+
+  .box p {
+    font-size: 1.6rem; 
+    margin: 0 auto; 
+  }
+
+  .box a {
+    width: 55%; 
+    margin: 0.5rem auto; 
+  }
+}
+
+
 
 
 @media (max-width: 788px) {
@@ -830,11 +861,12 @@ span {
     
     .box p {
         position: relative;
-        margin-top: -10px;
+        margin: -10px auto 0; 
         font-size: 1.8rem;
         padding: 20px;
         font-weight: bold;
-        width: 350px;
+        width: 90%;  
+        text-align: center;  
     }
 
     .skills-box {
@@ -860,17 +892,31 @@ span {
     } 
 
     .box a {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         margin: 9px;
         width: 55%;
-      }
+    }
+
+    .box p {
+        position: relative;
+        font-size: 1.5rem;
+        padding: 20px;
+        font-weight: 400;
+        width: 90%;  
+        text-align: center;  
+    }
+
+    .box h1 {
+        position: relative;
+       
+        font-size: 2rem;   
+        font-weight: bold;
+        
+    }
 
 
 
 }
-
-
-
 
 
 @media (max-width: 991px) {
@@ -1046,7 +1092,6 @@ span {
 
 
 }
-
 
 /*section Animation */
 
