@@ -1,8 +1,12 @@
 :root {
-  --main-color: #00ffee;
+  /* --main-color: #00ffee;
   --bg-color: #171d22;
   --card-bg: #262e36;
-  --text-color: #ffffff;
+  --text-color: #ffffff; */
+  --text-color: black;
+  --main-color: rgb(253, 46, 46);
+  --bg-color: #f3f2f2;
+  --second-bg-color: #e6e5e5;
 }
 
 * {
@@ -13,7 +17,7 @@
 }
 
 body {
-  background: var(--bg-color);
+  background: var(--second-bg-color);
   color: var(--text-color);
   line-height: 1.6;
 }
@@ -23,7 +27,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 10%;
-  background: rgba(38, 46, 54, 0.8);
+  /* background: rgba(38, 46, 54, 0.8); */
+  background: rgba(231, 232, 233, 0.329);
   position: sticky;
   top: 0;
   backdrop-filter: blur(8px);
@@ -32,7 +37,7 @@ header {
 
 /* Basic navbar */
 .navbar2 {
-  display: flex;         
+  display: flex;          
   gap: 20px;
 }
 
@@ -45,7 +50,7 @@ header {
 
 
 .logo {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: var(--text-color);
   cursor: pointer;
@@ -60,7 +65,7 @@ header {
   transform: scale(1.1);
 }
 .logo span {
-  text-shadow: 0 0 25px var(--main-color);
+  text-shadow: 0 0 15px var(--main-color);
 }
 
 nav a {
@@ -78,52 +83,60 @@ nav a.active {
 .hero {
   text-align: center;
   padding: 80px 10%;
-  background: linear-gradient(135deg, #1e252c, #262e36);
+  /* background: linear-gradient(135deg, #1e252c, #262e36); */
+  background: var(--bg-color);
+}
+
+.hero span {
+    color: var(--main-color);
+    font-size: 2.7rem;
 }
 .hero-content h2 {
   font-size: 2.2rem;
-  color: var(--main-color);
+  color: var(--text-color);
   margin-bottom: 15px;
 }
 .hero-content p {
   font-size: 1rem;
-  color: #cfd6db;
+  /* color: #cfd6db; */
+  color: var(--text-color);
   max-width: 700px;
   margin: auto;
   text-align: left;
 }
 
 .hero-content p {
-opacity: 0;                  
-transform: translateY(20px); 
-transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+  opacity: 0;                  
+  transform: translateY(40px); 
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
 .hero-content p.show {
-opacity: 1;                 
-transform: translateY(0);    
+  opacity: 1;                 
+  transform: translateY(0);    
 }
-
 
 .project-details {
   display: flex;
+  /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
   flex-direction: row;
   gap: 35px;
   padding: 60px 10%;
 }
 .detail-card {
   width: 280px;
-  background: var(--card-bg);
+  background: var(--bg-color);
   padding: 15px;
   border-radius: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .detail-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 6px 15px rgba(0, 255, 238, 0.2);
+  /* box-shadow: 0 6px 15px rgba(0, 255, 238, 0.2); */
+  box-shadow:0 6px 15px rgb(253, 46, 46);
 }
 .detail-card h3 {
-  color: var(--main-color);
+  color: var(--text-color);
   margin-bottom: 10px;
 }
 
@@ -137,7 +150,7 @@ transform: translateY(0);
   overflow: hidden;
 }
 .gallery h3 {
-  color: var(--main-color);
+  color: var(--text-color);
   margin-bottom: 20px;
 }
 .gallery-grid {
@@ -152,105 +165,105 @@ transform: translateY(0);
 }
 .gallery-grid img:hover {
   transform: scale(1.03);
-  box-shadow: 0 0 15px rgba(0, 255, 238, 0.4);
+  /* box-shadow: 0 0 15px rgb(253, 46, 46); */
+  box-shadow: 0 0 15px black;
 }
 
 .git{
-  position: relative;
-  justify-content: center;
-  text-align: center;
+    position: relative;
+    justify-content: center;
+    text-align: center;
 }
 
 .git a {
-padding: 0.6rem 2rem;
-background: var(--main-color);
-box-shadow: 0 0 25px var(--main-color);
-border-radius: 12px;
-font-size: 1rem;
-color: black;
-font-weight: 600;
-transition: 0.3s ease-in-out;
-cursor: pointer;
-text-decoration: none;
+  padding: 0.6rem 2rem;
+  background: var(--text-color);
+  box-shadow: 0 0 10px var(--text-color);
+  border-radius: 12px;
+  font-size: 1rem;
+  color: var(--bg-color);
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .git a:hover {
-transform: scale(1.05);
-box-shadow: 0 0 50px var(--main-color);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px var(--text-color);
 }
+
+p{
+  text-align: center;
+
+}
+
 
 footer {
   display: grid;
-  justify-content: center;    
-  align-items: center;         
+  justify-content: center;      
+  align-items: center;          
   gap: 30px;                   
   padding: 20px;
   font-size: 0.9rem;
   color: #ccc;
-  border-top: 1px solid #2e353c;
+  border-top: 1px solid #c7d7e8;
   margin-top: 40px;
-  background: #171d22;          
-
+  background: var(--second-bg-color);
+  /* background: linear-gradient(135deg, #ebebeb, #262e36);  */
+  flex-wrap: wrap;             
 }
-p{
-  position: relative;
-  color: #cfd6db;
-  justify-content: center;
-  text-align: center;
-
-}
-
 
 .socials {
-text-align: center;
-padding-bottom: 25px;
-color: var(--main-color);
+  text-align: center;
+  padding-bottom: 25px;
+  color: var(--text-color);
 }
 
 .socials a {
-font-size: 25px;
-color: var(--main-color);
-border: 2px solid var(--main-color);
-width: 42px;
-height: 42px;
-line-height: 42px;
-display: inline-block;
-text-align: center;
-border-radius: 50%;
-margin: 0 10px;
-transition: 0.3s ease-in-out;
+  font-size: 25px;
+  color: var(--text-color);
+  border: 2px solid var(--text-color);
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0 10px;
+  transition: 0.3s ease-in-out;
 }
 
 .socials a:hover {
-transform: scale(1.2) translateY(-10px);
-background-color: var(--main-color);
-color: black;
-box-shadow: 0 0 25px var(--main-color);
+  transform: scale(1.2) translateY(-10px);
+  background-color: var(--bg-color);
+  color: black;
+  box-shadow: 0 0 25px var(--text-color);
 }
 
 .footer-contact {
-display: flex;
-align-items: center;
-gap: 20px;                   
+  display: flex;
+  align-items: center;
+  gap: 20px;                   
 }
 
 .footer-item {
-color: #00ffee;
-text-decoration: none;
-font-size: 16px;
-display: flex;
-align-items: center;
-gap: 8px;                  
-transition: color 0.3s ease, transform 0.3s ease;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;                    
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .footer-item i {
   font-size: 20px;
-  color: #00ffee;
+  color: var(--text-color);
 }
 
 .footer-item:hover {
-  color: #ffffff;
+  color: var(--main-color);
   transform: scale(1.05);
 }
 

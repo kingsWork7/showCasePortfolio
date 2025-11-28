@@ -71,6 +71,7 @@ form.addEventListener('submit', async (e) => {
     }
 });
 
+
 /// CODE FOR SKILLS SCROLL DISPLAY 
 
 // document.addEventListener('DOMContentLoaded', () => {
