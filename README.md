@@ -107,4 +107,3 @@ Frontend Developer & UX Designer
 
 ---
 
-If you'd like, I can add badges, GIF previews, or a cleaner layout depending on your style!
