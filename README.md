@@ -76,18 +76,6 @@ root/
 
 ---
 
-## 🖼️ Screenshots / Demo
-
-### Adding Images
-
-To add images to the README:
-
-```
-![Alt text](images/your-image-name.png)
-```
-
-You can place screenshots in the `images/` folder and reference them.
-
 ### Live Demo
 
 🔗 **[https://izekor-kingsley.com/](https://izekor-kingsley.com/)**
